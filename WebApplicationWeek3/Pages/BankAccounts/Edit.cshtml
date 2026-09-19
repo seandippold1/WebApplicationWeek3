@@ -1,0 +1,65 @@
+@page
+@model WebApplicationWeek3.Pages.BankAccounts.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>BankAccount</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="BankAccount.BankAccountId" />
+            <div class="form-group">
+                <label asp-for="BankAccount.accountNumber" class="control-label"></label>
+                <input asp-for="BankAccount.accountNumber" class="form-control" />
+                <span asp-validation-for="BankAccount.accountNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BankAccount.accountBalance" class="control-label"></label>
+                <input asp-for="BankAccount.accountBalance" class="form-control" />
+                <span asp-validation-for="BankAccount.accountBalance" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BankAccount.accountName" class="control-label"></label>
+                <input asp-for="BankAccount.accountName" class="form-control" />
+                <span asp-validation-for="BankAccount.accountName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BankAccount.accountType" class="control-label"></label>
+                <input asp-for="BankAccount.accountType" class="form-control" />
+                <span asp-validation-for="BankAccount.accountType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BankAccount.originator" class="control-label"></label>
+                <input asp-for="BankAccount.originator" class="form-control" />
+                <span asp-validation-for="BankAccount.originator" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BankAccount.AccountHolder" class="control-label"></label>
+                <input asp-for="BankAccount.AccountHolder" class="form-control" />
+                <span asp-validation-for="BankAccount.AccountHolder" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BankAccount.AccountHolderId" class="control-label"></label>
+                <input asp-for="BankAccount.AccountHolderId" class="form-control" />
+                <span asp-validation-for="BankAccount.AccountHolderId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
